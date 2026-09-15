@@ -1,0 +1,53 @@
+---
+title: "CodeBook"
+author: "Amr"
+date: "2026-09-15"
+output: html_document
+---
+# Code Book: Human Activity Recognition Cleaned Dataset
+
+## Overview
+This code book describes the processing performed on the "Human Activity Recognition Using Smartphones Dataset" and documents the resulting variables in `tidy_dataset.txt`.
+
+## Data Transformation Steps
+1. **Merged Sets**: Combined `train` and `test` data files (`X`, `y`, and `subject`).
+2. **Filtered Features**: Extracted measurements evaluating mean (`mean()`) and standard deviation (`std()`).
+3. **Renamed Activities**: Replaced integer codes (1–6) with activity descriptors (e.g., `WALKING`, `LAYING`).
+4. **Cleaned Labels**: 
+   - Expanded prefix `t` -> `Time`
+   - Expanded prefix `f` -> `Frequency`
+   - Expanded `Acc` -> `Accelerometer`, `Gyro` -> `Gyroscope`, `Mag` -> `Magnitude`
+   - Removed special characters (`.`, `()`, `-`)
+5. **Aggregation**: Calculated arithmetic mean of each signal grouped by `subject` (1–30) and `activity` (6 levels).
+
+## Identifiers
+* `subject`: Unique ID for each participant (Integer: 1 to 30)
+* `activity`: Activity performed by subject (Factor: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+
+## Feature Variables
+All feature values represent averaged normalized signal measurements in `[-1, 1]`:
+* `TimeBodyAccelerometerMeanX / Y / Z`
+* `TimeBodyAccelerometerSTDX / Y / Z`
+* `TimeGravityAccelerometerMeanX / Y / Z`
+* `TimeGravityAccelerometerSTDX / Y / Z`
+* `TimeBodyAccelerometerJerkMeanX / Y / Z`
+* `TimeBodyAccelerometerJerkSTDX / Y / Z`
+* `TimeBodyGyroscopeMeanX / Y / Z`
+* `TimeBodyGyroscopeSTDX / Y / Z`
+* `TimeBodyGyroscopeJerkMeanX / Y / Z`
+* `TimeBodyGyroscopeJerkSTDX / Y / Z`
+* `TimeBodyAccelerometerMagnitudeMean` / `STD`
+* `TimeGravityAccelerometerMagnitudeMean` / `STD`
+* `TimeBodyAccelerometerJerkMagnitudeMean` / `STD`
+* `TimeBodyGyroscopeMagnitudeMean` / `STD`
+* `TimeBodyGyroscopeJerkMagnitudeMean` / `STD`
+* `FrequencyBodyAccelerometerMeanX / Y / Z`
+* `FrequencyBodyAccelerometerSTDX / Y / Z`
+* `FrequencyBodyAccelerometerJerkMeanX / Y / Z`
+* `FrequencyBodyAccelerometerJerkSTDX / Y / Z`
+* `FrequencyBodyGyroscopeMeanX / Y / Z`
+* `FrequencyBodyGyroscopeSTDX / Y / Z`
+* `FrequencyBodyAccelerometerMagnitudeMean` / `STD`
+* `FrequencyBodyAccelerometerJerkMagnitudeMean` / `STD`
+* `FrequencyBodyGyroscopeMagnitudeMean` / `STD`
+* `FrequencyBodyGyroscopeJerkMagnitudeMean` / `STD`

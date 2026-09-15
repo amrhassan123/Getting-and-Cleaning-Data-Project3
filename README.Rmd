@@ -1,0 +1,22 @@
+---
+title: "README"
+author: "Amr"
+date: "2026-09-15"
+output: html_document
+---
+# Getting and Cleaning Data - Course Project
+
+Repository containing the analysis script, code book, and output tidy dataset for the UCI HAR Dataset.
+
+## Repository Contents
+* `run_analysis.R`: R script executing all 5 cleaning steps.
+* `CodeBook.md`: Describes data source, cleaning logic, and final variable definitions.
+* `README.md`: Explains repository usage and script execution.
+* `tidy_dataset.txt`: Output tidy dataset containing averages grouped by subject and activity.
+
+## How to Run the Script
+1. Clone this repository: `git clone <https://github.com/amrhassan123/Getting-and-Cleaning-Data-Project3.git>`
+2. Open R or RStudio and set the project root directory as your working directory using `setwd()`.
+3. Ensure `dplyr` is installed: `install.packages("dplyr")`.
+4. Run `source("run_analysis.R")`.
+5. The script checks for the data, downloads/unzips if missing, and outputs `tidy_dataset.txt`.
